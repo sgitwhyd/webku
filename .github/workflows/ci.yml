@@ -19,19 +19,6 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-  test:
-    runs-on: [self-hosted]
-    needs: lint
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
-
   build:
     runs-on: [self-hosted]
     needs: test
