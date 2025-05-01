@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: /home/rootgit/var/www/webku
+        working-directory: /var/www/webku
     steps:
       - name: Pull latest changes
         run: |
