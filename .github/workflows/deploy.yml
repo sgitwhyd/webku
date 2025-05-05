@@ -28,7 +28,7 @@ jobs:
         run: pm2 restart webku
 
       - name: Notify Discord
-        if: (success)
+        if: success()
         run:  |
           curl -H "Content-Type: application/json" \
             -X POST \
