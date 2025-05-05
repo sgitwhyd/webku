@@ -29,8 +29,8 @@ jobs:
 
       - name: Notify Discord
         if: success()
-        run:  |
+        run: |
           curl -H "Content-Type: application/json" \
             -X POST \
             -d '{"content":"✅ Deployment to production was successful!"}' \
-            ${{ secrets.DISCORD_WEBHOOK_URL }}
+            ${{ Environments.webku.Secrets.DISCORD_WEBHOOK_URL }}
