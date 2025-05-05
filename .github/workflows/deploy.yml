@@ -26,3 +26,11 @@ jobs:
 
       - name: Restart with PM2
         run: pm2 restart webku
+
+      - name: Notify Discord
+        if: (success)
+        run:  |
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"content":"✅ Deployment to production was successful!"}' \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
