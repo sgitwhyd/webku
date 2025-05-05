@@ -33,4 +33,4 @@ jobs:
           curl -H "Content-Type: application/json" \
             -X POST \
             -d '{"content":"✅ Deployment to production was successful!"}' \
-            ${{ Environments.webku.Secrets.DISCORD_WEBHOOK_URL }}
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
